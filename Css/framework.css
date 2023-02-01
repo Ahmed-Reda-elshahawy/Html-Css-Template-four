@@ -1,0 +1,362 @@
+/* padding */
+.p-0 {
+    padding: 0;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.pb-15 {
+    padding-bottom: 15px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+
+
+/* display block */
+.d-block {
+    display: block;
+}
+
+
+
+/* margin */
+.m-0 {
+    margin: 0;
+}
+
+.m-15 {
+    margin: 15px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+
+
+/* border radius */
+.rad-6 {
+    border-radius: 6px;
+}
+
+.rad-10 {
+    border-radius: 10px;
+}
+
+.srad-50 {
+    border-radius: 50px 0 0 50px;
+}
+
+
+
+/* text */
+.font-14 {
+    font-size: 14px;
+}
+
+.font-13 {
+    font-size: 13px;
+}
+
+.txt-c {
+    text-align: center;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+
+
+/* border */
+.b-ccc {
+    border: 1px solid #ccc;
+}
+
+.b-none {
+    outline: none;
+}
+
+
+
+/* width */
+.w-full {
+    width: 100%;
+}
+
+
+
+/* flex properities */
+.flex-btween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+
+
+/* fontColor */
+.c-blue {
+    color: var(--m-color);
+}
+
+.c-black {
+    color: black;
+}
+
+.c-gray {
+    color: gray;
+}
+
+.c-golden {
+    color: goldenrod;
+}
+
+.c-green {
+    color: green;
+}
+
+.c-Red {
+    color: red;
+}
+
+
+
+/* backColors */
+.bg-white {
+    background-color: white;
+}
+
+.alt-color {
+    background-color: var(--s-color);
+}
+
+.bg-blue {
+    background-color: var(--m-color);
+}
+
+.bg-semiBlue {
+    background-color: rgba(30, 143, 255, 0.263);
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-semiOrange {
+    background-color: rgba(255, 166, 0, 0.293);
+}
+
+.bg-green {
+    background-color: rgb(34, 182, 34);
+}
+
+.bg-semiGreen {
+    background-color: rgba(0, 128, 0, 20%);
+}
+
+.c-red {
+    background-color: crimson;
+}
+
+.bg-semiRed {
+    background-color: rgba(220, 20, 60, 20%);
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.c-gold {
+    background-color: goldenrod;
+}
+
+
+
+/* outline-color */
+.outline-blue {
+    outline: 3px solid var(--m-color);
+}
+
+.outline-green {
+    outline: 3px solid rgb(50, 205, 50);
+}
+
+.outline-orange {
+    outline: 3px solid orange;
+}
+
+
+
+/* display grid */
+.d-grid {
+    display: grid;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+
+
+/* phone */
+@media(max-width:767px) {
+    .txt-c-phone {
+        text-align: center;
+    }
+
+    .hide-phone {
+        display: none;
+    }
+}
+
+
+
+/* main color */
+.bg-m-color {
+    background-color: dodgerblue;
+}
+
+
+
+/* botton shape */
+.b-shape {
+    color: white;
+    background-color: var(--m-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: block;
+    margin: 0px 0px 0px auto;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.B-btn-shape {
+    color: white;
+    background-color: var(--m-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: block;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-shape-B {
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-shape {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+}
+
+.shape-btn {
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+
+
+/* position */
+.p-relative {
+    position: relative;
+}
+
+/* hide-overflow */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* <label>
+    <input class="toggle-checkbox" type="checkbox" checked>
+    <div class="switch"></div>
+</label> */

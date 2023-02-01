@@ -1,0 +1,1609 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e7e6e6;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: dodgerblue;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1e8fffd5;
+}
+
+:root {
+    --m-color: dodgerblue;
+    --s-color: deepskyblue;
+}
+
+
+/* ========================== sidebar =============================== */
+/* ================================================================== */
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.page .sidebar {
+    background-color: white;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+    width: 250px;
+}
+
+.page .sidebar h3 {
+    position: relative;
+}
+
+.page .sidebar ul {
+    margin: 50px 0 0;
+}
+
+.page .sidebar ul li>a {
+    display: block;
+    padding: 12px 12px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.page .sidebar ul li a:hover {
+    background-color: #f0f7f7;
+    border-radius: 6px;
+}
+
+.active>a {
+    background-color: #eee;
+    color: var(--m-color);
+    border-radius: 6px;
+}
+
+@media(min-width:768px) {
+
+    .page .sidebar {
+        width: 250px;
+    }
+
+    .page .sidebar h3::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 45px;
+        width: 70%;
+        height: 2px;
+        background-color: rgb(43, 104, 226);
+    }
+
+    .page .sidebar h3::after {
+        content: "";
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
+        transform: translateY(-42%);
+        top: 45px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgb(43, 104, 226);
+        border: 5px solid white;
+    }
+}
+
+@media(max-width:767px) {
+    .page .sidebar ul li span {
+        display: none;
+    }
+
+    .page .sidebar h3>.hidden {
+        display: none;
+    }
+
+    .page .sidebar h3 {
+        font-size: 15px;
+    }
+
+    .page .sidebar ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .page .sidebar {
+        width: 90px;
+    }
+}
+
+
+/* ========================== head of content  ======================= */
+/* =================================================================== */
+.conotent {
+    width: 100%;
+    overflow: hidden;
+}
+
+.conotent .head {
+    background-color: white;
+    padding: 15px 20px;
+}
+
+.conotent .head .icons img {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+.conotent .head .icons {
+    display: flex;
+    align-items: center;
+}
+
+.conotent .head .icons .notify {
+    position: relative;
+}
+
+.conotent .head .icons .notify::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: deepskyblue;
+}
+
+.conotent .head .search {
+    position: relative;
+}
+
+.conotent .head .search>input {
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 160px;
+    transition: 0.3s;
+    padding-left: 30px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.conotent .head .search>input:focus {
+    width: 180px;
+}
+
+@media(max-width:767px) {
+    .conotent .head .search>input:focus {
+        width: 160px;
+    }
+}
+
+.conotent .head .search::before {
+    font-family: var(--fa-style-family-classic);
+    content: '\f002';
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 14px;
+}
+
+.conotent h1 {
+    position: relative;
+    margin: 20px 20px 40px;
+}
+
+.conotent h1::before,
+.conotent h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    bottom: -10px;
+}
+
+.conotent h1::before {
+    width: 120px;
+    background-color: white;
+}
+
+.conotent h1::after {
+    width: 60px;
+    background-color: black;
+}
+
+.conotent .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    margin: 0px 20px 20px 20px;
+}
+
+@media(max-width:767px) {
+    .conotent .wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin: 0px 10px 10px 10px;
+    }
+}
+
+
+/* ============================= Welcome page ======================== */
+/* =================================================================== */
+.welcome {
+    background-color: white;
+    overflow: hidden;
+}
+
+.welcome .intro {
+    background-color: #eee;
+    padding-bottom: 10px;
+}
+
+.welcome .w-img {
+    max-width: 65px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: relative;
+    top: -30px;
+    left: 20px;
+}
+
+.welcome .intro .info img {
+    max-width: 160px;
+}
+
+.welcome .intro .info .name h2 {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.welcome .intro .info .name p {
+    color: gray;
+    margin-top: -10px;
+}
+
+.welcome .content .details {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.welcome .content .details div {
+    font-size: 17px;
+    flex: 1;
+    padding: 15px;
+}
+
+.welcome .content .details span {
+    display: block;
+    color: gray;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.welcome .content a {
+    display: block;
+    width: fit-content;
+    color: white;
+    background-color: var(--m-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 20px 20px 20px auto;
+    font-size: 14px;
+}
+
+.welcome .content a:hover {
+    background-color: var(--s-color);
+}
+
+@media(max-width:767px) {
+    .welcome .w-img {
+        left: 0px;
+    }
+
+    .welcome .content .details {
+        display: block;
+    }
+}
+
+
+/* ============================= Quick Draft content ============================= */
+.Quick-draft p {
+    color: gray;
+    padding-bottom: 10px;
+}
+
+.Quick-draft input:first-child,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #eee;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+
+.Quick-draft textarea {
+    resize: none;
+}
+
+.Quick-draft input:last-child:hover {
+    background-color: var(--s-color);
+}
+
+
+/* ============================= Targets content  ============================= */
+.targets .icon {
+    width: 80px;
+    height: 80px;
+    /* background-color: rgba(30, 143, 255, 0.263); */
+    margin-right: 10px;
+    /* color: var(--m-color); */
+}
+
+.targets .info {
+    flex: 1;
+}
+
+.targets .info .progress {
+    /* background-color: rgba(30, 143, 255, 0.263); */
+    position: relative;
+    height: 5px;
+}
+
+.targets .info .progress>span {
+    /* background-color: var(--m-color); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.targets .info .progress>span>span {
+    position: absolute;
+    bottom: 16px;
+    padding: 2px 5px;
+    /* background-color: var(--m-color); */
+    right: -16px;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+}
+
+.targets .info .progress>span>span::after {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    /* border-top-color: var(--m-color); */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.targets .money .info .progress>span>span::after {
+    border-top-color: var(--m-color);
+}
+
+.targets .projects .info .progress>span>span::after {
+    border-top-color: orange;
+}
+
+.targets .teams .info .progress>span>span::after {
+    border-top-color: rgb(34, 182, 34);
+}
+
+.targets .money .icon {
+    color: var(--m-color);
+}
+
+.targets .projects .icon {
+    color: orange;
+}
+
+.targets .teams .icon {
+    color: rgb(34, 182, 34);
+}
+
+
+/* ============================= Statistics content  ============================= */
+.Statistics .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+}
+
+.Statistics .boxes .box {
+    border: 1px solid #ccc;
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    padding: 20px;
+    color: gray;
+    font-size: 12px;
+}
+
+.Statistics .boxes .box span {
+    color: black;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.Statistics .boxes .box i {
+    font-size: 25px;
+}
+
+.Statistics .boxes .box:first-child>i {
+    color: var(--m-color);
+}
+
+.Statistics .boxes .box:nth-child(2)>i {
+    color: orange;
+}
+
+.Statistics .boxes .box:nth-child(3)>i {
+    color: green;
+}
+
+.Statistics .boxes .box:nth-child(4)>i {
+    color: red;
+}
+
+@media(max-width:767px) {
+    .Statistics .boxes .box {
+        width: 100%;
+    }
+}
+
+
+/* ============================= Latest News  ============================= */
+.LastNews .news .new {
+    display: flex;
+}
+
+.LastNews .news .new:not(:last-of-type) {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.LastNews .news .new img {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.LastNews .news .new .info {
+    flex-grow: 1;
+}
+
+.LastNews .news .new .info h3 {
+    margin: 0 0 10px;
+}
+
+.LastNews .news .new .info p {
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+}
+
+.LastNews .news .new .label>span {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+}
+
+@media(max-width:767px) {
+    .LastNews .news .new {
+        display: block;
+        /* text-align: center; */
+    }
+
+    .LastNews .news .new .label {
+        margin-top: 20px;
+    }
+}
+
+
+/* ============================= Latest Tasks  ======================= */
+.latestTasks .tasks .task:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.latestTasks .tasks i {
+    transition: 0.3s;
+}
+
+.latestTasks .tasks i:hover {
+    color: red;
+}
+
+.latestTasks .tasks .done {
+    opacity: 0.3;
+}
+
+.latestTasks .tasks .done h3,
+.latestTasks .tasks .done p {
+    text-decoration: line-through;
+}
+
+@media(max-width:767px) {
+    .latestTasks .tasks .task {
+        display: block;
+    }
+
+    .latestTasks .tasks i {
+        margin-top: 20px;
+    }
+}
+
+
+/* ============================ Top Search Items  ==================== */
+.search-items .items .item span:last-child {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+}
+
+
+/* ============================ latest uploads  ====================== */
+.latest-upload .Uploads .Upload img {
+    width: 40px;
+    height: 40px;
+}
+
+.latest-upload .Uploads .Upload:not(:last-of-type) {
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* ============================ last projects  ======================= */
+.lastProjects h2 {
+    letter-spacing: -1px;
+}
+
+.lastProjects .goals::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--m-color);
+}
+
+.lastProjects .goals li {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.lastProjects .goals li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    outline: 2px solid var(--m-color);
+    display: block;
+    margin-right: 15px;
+    z-index: 1;
+    background-color: white;
+}
+
+.lastProjects .goals .Done::before {
+    background-color: var(--m-color);
+}
+
+.lastProjects .goals .current::before {
+    animation: color-change 0.9s infinite alternate;
+}
+
+/* animation */
+@keyframes color-change {
+    from {
+        background-color: var(--m-color);
+    }
+
+    to {
+        background-color: white;
+    }
+}
+
+.lastProjects img {
+    position: absolute;
+    width: 160px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+}
+
+
+/* ============================ Reminders  =========================== */
+.Reminders ul li span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.Reminders ul li .blue {
+    border-left: 2px solid var(--m-color);
+    padding-left: 15px;
+}
+
+.Reminders ul li .orange {
+    border-left: 2px solid orange;
+    padding-left: 15px;
+}
+
+.Reminders ul li .green {
+    border-left: 2px solid green;
+    padding-left: 15px;
+}
+
+.Reminders ul li .red {
+    border-left: 2px solid red;
+    padding-left: 15px;
+}
+
+
+/* ============================ latestPost  ========================== */
+.latestPost .header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.latestPost .section p {
+    line-height: 1.8;
+    min-height: 140px;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* ============================ socialMedia  ========================= */
+.socialMedia .box {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+.socialMedia .box .info i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialMedia .box .info span {
+    margin-left: 70px;
+}
+
+.socialMedia .box .info i:hover {
+    transform: rotate(5deg);
+}
+
+.socialMedia .twitter {
+    background-color: hsla(203, 89%, 53%, 20%);
+    color: #1da1f2;
+}
+
+.socialMedia .twitter a,
+.socialMedia .twitter i {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.socialMedia .face {
+    background-color: rgba(24, 118, 242, 20%);
+    color: #1877f2;
+}
+
+.socialMedia .face a,
+.socialMedia .face i {
+    background-color: #1877f2;
+    color: white;
+}
+
+.socialMedia .youtube {
+    background-color: rgba(255, 0, 0, 20%);
+    color: #ff0000;
+}
+
+.socialMedia .youtube a,
+.socialMedia .youtube i {
+    background-color: #ff0000;
+    color: white;
+}
+
+.socialMedia .linkdin {
+    background-color: rgba(0, 118, 181, 20%);
+    color: #0077b5;
+}
+
+.socialMedia .linkdin a,
+.socialMedia .linkdin i {
+    background-color: #0077b5;
+    color: white;
+}
+
+/* ============================ Projects page  ======================= */
+/* =================================================================== */
+.projects .responsiveTable {
+    overflow-x: auto;
+}
+
+.projects table {
+    width: 100%;
+    min-width: 1000px;
+}
+
+.projects table td,
+.projects table th {
+    padding: 15px;
+}
+
+.projects table th {
+    background-color: #eee;
+}
+
+.projects table td {
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.projects table tr:hover td {
+    background-color: #faf7f7;
+}
+
+.projects table td:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.projects table img {
+    width: 30px;
+    border: 1px solid white;
+    background-color: white;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.projects table tbody img:not(:first-child) {
+    margin-left: -20px;
+}
+
+
+/* ============================ Setting page ========================= */
+/* =================================================================== */
+.toggle-checkbox {
+    /* -webkit-appearance: none; */
+    appearance: none;
+    display: none;
+}
+
+.switch {
+    width: 70px;
+    background-color: #ccc;
+    height: 25px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00d";
+    font-weight: 900;
+    background-color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 5px;
+    top: 3.5px;
+    transition: 0.3s;
+}
+
+.toggle-checkbox:checked+.switch {
+    background-color: var(--m-color);
+}
+
+.toggle-checkbox:checked+.switch::before {
+    left: 47px;
+    content: "\f00c";
+    color: var(--m-color);
+}
+
+@media(max-width:767px) {
+    .switch {
+        width: 60px;
+        height: 20px;
+        border-radius: 25px;
+    }
+
+    .switch::before {
+        width: 12px;
+        height: 12px;
+        left: 5px;
+        top: 4px;
+    }
+
+    .toggle-checkbox:checked+.switch::before {
+        left: 43px;
+    }
+}
+
+
+/* ============================ siteControl  ========================= */
+.Setting {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+@media(max-width:767px) {
+    .Setting {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        margin-right: 10px;
+        margin-left: 10px;
+        gap: 10px;
+    }
+}
+
+.siteControl textarea {
+    resize: none;
+    height: 150px;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #CCC;
+    font-size: 13px;
+}
+
+
+/* ============================ General Info =========================== */
+.genralInfo .email input:disabled {
+    cursor: no-drop;
+    background-color: #f0f4f7;
+    color: #BBB;
+}
+
+
+/* ============================ Security Info ========================== */
+.Security .box:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+
+.Security .box .devices-btn {
+    color: black;
+    background-color: #eee;
+}
+
+
+/* ============================ Social Info ========================== */
+.Social div>i {
+    width: 40px;
+    height: 40px;
+    background-color: #faf7f7;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    color: gray;
+    transition: 0.3s;
+}
+
+.Social div input {
+    height: 40px;
+    background-color: #faf7f7;
+    border: 1px solid #ccc;
+    border-radius: 0 6px 6px 0;
+    color: gray;
+    padding-left: 10px;
+    outline: none;
+}
+
+.Social div:focus-within i {
+    color: black;
+}
+
+
+/* ============================ Widgets Control ========================== */
+.Widgets .control label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.Widgets .control input {
+    display: none;
+    appearance: none;
+}
+
+.Widgets .control label::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    left: 0px;
+}
+
+.Widgets .control label:hover::before {
+    border-color: var(--s-color);
+}
+
+.Widgets .control label::after {
+    font-family: var(--fa-style-family-classic);
+    content: '\f00c';
+    font-weight: 900;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    left: 0px;
+    top: 50%;
+    margin-top: -9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--m-color);
+    transform: scale(0) rotate(365deg);
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.Widgets .control input[type="checkbox"]:checked+label::after {
+    transform: scale(1);
+}
+
+
+/* ============================ Backup Manager ========================== */
+.Backup .control label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.Backup input {
+    display: none;
+    appearance: none;
+}
+
+.Backup .control label::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    left: 0px;
+    top: 50%;
+    margin-top: -10px;
+    /* transform: translateY(-50%); */
+}
+
+.Backup .control label:hover::before {
+    border-color: var(--s-color);
+}
+
+.Backup .control label::after {
+    font-family: var(--fa-style-family-classic);
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    color: white;
+    background-color: var(--m-color);
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.Backup .control input:checked+label::before {
+    border-color: var(--m-color);
+}
+
+.Backup .control input:checked+label::after {
+    transform: scale(1);
+}
+
+.Backup .servers {
+    border-top: 1px solid #eee;
+    gap: 10px;
+}
+
+.Backup .servers .server {
+    border: 2px solid #eee;
+}
+
+.Backup .servers .server label {
+    cursor: pointer;
+}
+
+.Backup .servers input:checked+.server {
+    border-color: var(--m-color);
+}
+
+@media(max-width:767px) {
+    .Backup .servers {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ============================ Backup Manager ========================== */
+.profile .info-one {
+    width: 300px;
+}
+
+@media(min-width:768px) {
+    .profile .info-one {
+        border-right: 1px solid #eee;
+    }
+}
+
+.profile .info-one .rating {
+    margin: 10px 0;
+}
+
+.profile .info-one img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile .info-one .progress {
+    position: relative;
+    margin: auto;
+    height: 5px;
+    width: 75%;
+    background-color: #eee;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.profile .info-one .progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--m-color);
+    border-radius: 6px;
+}
+
+.profile .info-two .row {
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.profile .info-two .row:hover {
+    background-color: #f0f7f7;
+    transition: 0.3s;
+}
+
+.profile .info-two .row:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.profile .info-two .row>div {
+    min-width: 250px;
+    padding: 10px 0 0;
+}
+
+@media(max-width:767px) {
+    .profile .info {
+        flex-wrap: wrap;
+    }
+
+    .profile .info-two .row>div {
+        min-width: 200px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .profile .info-two .row>div>label>.switch {
+        margin: auto;
+    }
+}
+
+
+/* ============================ Backup Manager ========================== */
+@media(min-width:768px) {
+    .other-div .skills {
+        flex-grow: 1;
+    }
+
+    .other-div .activites {
+        flex-grow: 2;
+    }
+}
+
+@media(max-width:767px) {
+    .other-div {
+        display: block;
+    }
+
+    .other-div .activites {
+        margin-top: 20px;
+    }
+}
+
+.other-div .skills ul>li {
+    padding: 15px 0;
+}
+
+.other-div .skills ul>li>span:not(:last-child) {
+    margin-right: 10px;
+}
+
+.other-div .skills ul>li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.other-div .activites .activity {
+    display: flex;
+    align-items: center;
+}
+
+.other-div .activites .activity:not(:last-child) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.other-div .activites .activity .date {
+    margin-left: auto;
+}
+
+.other-div .activites .activity img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+@media(max-width:767px) {
+    .other-div .activites .activity {
+        display: block;
+        text-align: center;
+    }
+
+    .other-div .activites .activity img {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+
+    .other-div .activites .activity .date {
+        margin-top: 10px;
+    }
+}
+
+
+/* ============================= Projects page ======================= */
+/* =================================================================== */
+.projects {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+@media(max-width:767px) {
+    .projects {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+}
+
+.projects .project .date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.projects .project .team {
+    position: relative;
+    min-height: 80px;
+}
+
+.projects .project .team a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.projects .project .team a:hover {
+    z-index: 1000;
+}
+
+.projects .project .team img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.projects .project .team a:nth-child(2) {
+    left: 25px;
+}
+
+.projects .project .team a:nth-child(3) {
+    left: 50px;
+}
+
+.projects .project .team a:nth-child(4) {
+    left: 75px;
+}
+
+.projects .project .team a:nth-child(5) {
+    left: 100px;
+}
+
+.projects .project .skills {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.projects .project .skills>span {
+    width: fit-content;
+}
+
+.projects .project .progress {
+    background-color: #eee;
+    height: 8px;
+    width: 180px;
+    border-radius: 6px;
+}
+
+@media(max-width:767px) {
+    .projects .project .skills {
+        flex-direction: column;
+    }
+
+    .projects .project .achieve {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.projects .project .progress>span {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 6px;
+}
+
+
+/* ============================= Courses page ======================== */
+/* =================================================================== */
+.courses {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media(max-width:767px) {
+    .courses {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.courses .course {
+    overflow: hidden;
+}
+
+.courses .course .cover {
+    max-width: 100%;
+}
+
+.courses .course .instructor {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.courses .course .discription p {
+    line-height: 1.7;
+}
+
+.courses .course .info {
+    border-top: 1px solid #eee;
+}
+
+.courses .course .info .info-btn {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ============================= Friends page ======================== */
+/* =================================================================== */
+.friends {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media(max-width:767px) {
+    .friends {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.friends .friend .contact {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.friends .friend .contact i {
+    padding: 10px;
+    background-color: #eee;
+    color: #666;
+    border-radius: 50%;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.friends .friend .contact i:hover {
+    background-color: var(--m-color);
+    color: white;
+}
+
+.friends .friend .info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.friends .friend .icons {
+    margin: 15px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.friends .friend .icons i {
+    margin-right: 10px;
+}
+
+.friends .friend .icons .vip {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: orange;
+    opacity: 0.2;
+    font-weight: bolder;
+}
+
+
+/* ============================= Courses page ======================== */
+/* =================================================================== */
+.files-page {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+@media(max-width:767px) {
+    .files-page {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+.files-page .statistics {
+    min-width: 250px;
+}
+
+.files-page .statistics .uploads>div {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.files-page .statistics .uploads>div:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.files-page .statistics .uploads>div .size {
+    margin-left: auto;
+}
+
+.files-page .statistics .btn-upload {
+    display: flex;
+    justify-content: center;
+}
+
+.files-page .statistics .btn-upload>a {
+    padding: 15px 20px;
+}
+
+.files-page .statistics .btn-upload>a:hover {
+    background-color: var(--s-color);
+}
+
+.files-page .statistics .btn-upload>a:hover i {
+    animation: up-down 0.8s infinite;
+}
+
+@keyframes up-down {
+
+    0%,
+    100% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+}
+
+.files-page .statistics .uploads>div i {
+    width: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.files-page .files {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.files-page .files .file .name {
+    padding: 10px 0;
+}
+
+.files-page .files .file .date-size {
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+
+.files-page .files .file i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: gray;
+}
+
+.files-page .files .file img {
+    width: 64px;
+    height: 64px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.files-page .files .file img:hover {
+    transform: rotate(5deg);
+}
+
+
+/* ============================= Plans page ========================== */
+/* =================================================================== */
+.plans {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+@media(max-width:767px) {
+    .plans {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 10px;
+        margin: 10px;
+    }
+}
+
+.plans .plan .top {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border: 3px solid white;
+}
+
+.plans .plan .top .cost {
+    font-size: 40px;
+    width: fit-content;
+    margin: auto;
+    position: relative;
+}
+
+.plans .plan .top .cost span {
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+
+.plans .plan ul li {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.plans .plan ul li i:first-child {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.plans .plan ul li .true {
+    color: rgb(44, 213, 44);
+}
+
+.plans .plan ul li>i:not(.true, .help) {
+    color: red;
+}
+
+.plans .plan ul li .help {
+    margin-left: auto;
+}
+
+.plans .plan a {
+    font-size: 16px;
+    padding: 5px 15px;
+}
